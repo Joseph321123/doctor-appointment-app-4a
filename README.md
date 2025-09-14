@@ -59,3 +59,14 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Idioma, zona horaria, foto de perfil
+
+Hicimos cambios en el archivo .env para poder poner en español nuestra inferfaz, pero primero usando las siguientes dos lineas de comando en la terminal composer require laravel-lang/common , php artisan lang:add es
+
+Tambuen conectamos nuestra base de dados primero con este comando php artisan migrate y ya despues en .env
+
+En la zona horaria en app.php solo cambiamos a 'timezone' => 'America/Merida',
+
+y por ultimo en jetstream,php descomentamos la siguiente linea para que nos deje agregar fotos de perfil Features::profilePhotos(),
+
