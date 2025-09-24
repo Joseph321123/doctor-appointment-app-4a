@@ -70,3 +70,16 @@ En la zona horaria en app.php solo cambiamos a 'timezone' => 'America/Merida',
 
 y por ultimo en jetstream,php descomentamos la siguiente linea para que nos deje agregar fotos de perfil Features::profilePhotos(),
 
+## Ruta Admin
+
+En web.php lo que hacemos es comentar la primera ruta y de ahi creamos la ruta para que nos redireccione a admin, Route::redirect('/', '/admin');
+
+## Uso de plantilla Flowbite
+
+En este caso lo que hicimos fue usar una plantilla de Flowbite, tuvimos que separar en diferentes archvios la estructura que nos dio flowbite para una mejor funcionalidad y modificacion
+
+## Modificacion de la plantilla
+
+En este caso creamo una carpte y seccionamos la parte de navegacion y de el sidebar, para que interactuen de forma diferente, los archivos son navigation.blade.php y sidebar.blade.php
+
+
