@@ -1,5 +1,11 @@
-<x-admin-layout>
+<x-admin-layout :breadcrumbs=" [
+    [
+        'name' => 'Dashboard',
+        'href' => route('admin.dashboard'),
+],
+['name' => 'Profile'],
+]">
 
-    Hola desde admin
+    Hola mundo desde ADMIN
 
 </x-admin-layout>
