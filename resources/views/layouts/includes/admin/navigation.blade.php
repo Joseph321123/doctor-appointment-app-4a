@@ -9,7 +9,7 @@
                     </svg>
                 </button>
                 <a href="/" class="flex ms-2 md:me-24">
-                    <img src="/images/Logo%20de%20ejemplo%20para%20sustituir%20el%20de%20FlowBite.jpg" class="h-9 me-3" alt="App Logo" />
+                    <img src="{{asset('/images/Logo%20de%20ejemplo%20para%20sustituir%20el%20de%20FlowBite.jpg')}}" class="h-9 me-3" alt="App Logo" />
                     <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Medical Appointments</span>
                 </a>
             </div>
