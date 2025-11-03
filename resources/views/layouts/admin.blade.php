@@ -35,6 +35,25 @@
     <div class="mt-14 flex items-center justify-between w-full">
         @include('layouts.includes.admin.breadcrumb')
     </div>
+    <main>
+        <div class="max-w-7xl mx-auto">
+
+            {{-- Título y botón de acción --}}
+            <div class="flex justify-between items-center mb-6">
+                @if (isset($title))
+                    <h1 class="text-2xl font-semibold text-gray-800 dark:text-white">
+                        {{ $title }}
+                    </h1>
+                @endif
+
+                @if (isset($action))
+                    <div>
+                        {{ $action }}
+                    </div>
+                @endif
+            </div>
+
+        </div>
     {{$slot}}
 </div>
 
