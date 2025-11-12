@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\Admin\RoleController;
 use Illuminate\Support\Facades\Route;
+// Gestión de usuarios
+use App\Http\Controllers\Admin\UserController;
+Route::resource('users', UserController::class);
+
 
 Route::get('/', function () {
     return view('admin.dashboard');
