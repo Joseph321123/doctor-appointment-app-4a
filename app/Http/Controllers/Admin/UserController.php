@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -89,16 +90,31 @@ class UserController extends Controller
 
     public function destroy(User $user)
     {
-        if (auth()->id() === $user->id) {
+
+        //No permitir que el usuario logueado se borre asi mismo
+        if (Auth::user()->id === $user->id){
             session()->flash('swal', [
                 'icon' => 'error',
-                'title' => 'No se puede eliminar este usuario',
-                'text' => 'No puedes eliminar tu propio usuario.'
+                'title' => 'error',
+                'text' => "No se puede eliminar este usuario"
             ]);
-            return redirect()->route('admin.users.index');
+            abort(403, 'No puedes eliminar tu propio usuario');
         }
 
+        //Eliminar roles asociados a un usuario
+        $user->roles()->detach();
+
+        //Eliminar el usuario
         $user->delete();
+
+        //if (auth()->id() === $user->id) {
+            //session()->flash('swal', [
+                //'icon' => 'error',
+                //'title' => 'No se puede eliminar este usuario',
+                //'text' => 'No puedes eliminar tu propio usuario.'
+            //]);
+            //return redirect()->route('admin.users.index');
+        //}
 
         session()->flash('swal', [
             'icon' => 'success',
