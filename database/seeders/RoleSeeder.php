@@ -14,6 +14,7 @@ class RoleSeeder extends Seeder
     {
         //Definir roles
         $roles = [
+            'Super Admin',
             'Paciente',
             'Doctor',
             'Recepcionista',

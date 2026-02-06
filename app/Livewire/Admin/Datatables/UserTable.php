@@ -15,6 +15,7 @@ class UserTable extends DataTableComponent
     //Define el  modelo y su consulta
     public function builder(): Builder
     {
+        //devuelve la relacion con roles
         return User::query()->with('roles');
     }
 

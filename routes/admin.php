@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\PatientController;
 use App\Http\Controllers\Admin\RoleController;
 use Illuminate\Support\Facades\Route;
 // Gestión de usuarios
@@ -14,3 +15,8 @@ Route::get('/', function () {
 //Gestion de roles
 Route::resource('roles', RoleController::class);
 
+//Gestion de usuarios
+Route::resource('users', UserController::class);
+
+//Gestion de pacientes
+Route::resource('patients', PatientController::class);
