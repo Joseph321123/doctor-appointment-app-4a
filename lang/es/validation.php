@@ -292,5 +292,9 @@ return [
         'emergency_contact_phone' => 'teléfono del contacto de emergencia',
         'emergency_contact_relationship' => 'relación con el contacto',
 
+        // Doctores
+        'medical_license_number' => 'número de licencia médica',
+        'biography'              => 'biografía',
+
     ],
 ];

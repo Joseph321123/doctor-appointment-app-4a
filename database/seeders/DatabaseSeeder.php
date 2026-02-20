@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             UserSeeder::class,
             BloodTypeSeeder::class,
+            SpecialitySeeder::class,
+            DoctorSeeder::class,
         ]);
 
     }
