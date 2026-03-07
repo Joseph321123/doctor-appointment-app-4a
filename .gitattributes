@@ -1,10 +1,30 @@
+#Sorry, i can't fix this code
+
 * text=auto eol=lf
 
 *.blade.php diff=html
 *.css diff=css
 *.html diff=html
+*.js diff=javascript
+*.json linguist-language=JSON
 *.md diff=markdown
 *.php diff=php
+*.yml text
+*.yaml text
+*.env text
+*.lock text -diff
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
 
 /.github export-ignore
 CHANGELOG.md export-ignore
