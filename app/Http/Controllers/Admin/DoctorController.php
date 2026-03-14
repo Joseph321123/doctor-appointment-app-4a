@@ -73,4 +73,10 @@ class DoctorController extends Controller
     {
         //
     }
+
+    public function schedules(Doctor $doctor)
+    {
+        $doctor->load('user');
+        return view('admin.doctors.schedules', compact('doctor'));
+    }
 }

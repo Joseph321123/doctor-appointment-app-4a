@@ -296,5 +296,16 @@ return [
         'medical_license_number' => 'número de licencia médica',
         'biography'              => 'biografía',
 
+        // Citas
+        'patient_id'  => 'paciente',
+        'doctor_id'   => 'doctor',
+        'start_time'  => 'hora de inicio',
+        'end_time'    => 'hora de fin',
+        'reason'      => 'motivo',
+        'status'      => 'estado',
+        'diagnosis'   => 'diagnóstico',
+        'treatment'   => 'tratamiento',
+        'notes'       => 'notas',
+
     ],
 ];
