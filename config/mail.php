@@ -14,6 +14,10 @@ return [
     |
     */
 
+    /*
+    | En .env usa MAIL_MAILER=smtp con MAIL_HOST/MAIL_USERNAME/MAIL_PASSWORD para Mailtrap u otro SMTP.
+    | Si dejas "log", los mensajes solo se escriben en storage/logs/laravel.log (no llegan al buzón).
+    */
     'default' => env('MAIL_MAILER', 'log'),
 
     /*
@@ -39,6 +43,7 @@ return [
 
         'smtp' => [
             'transport' => 'smtp',
+            // Mailtrap / STARTTLS: deja null o prueba MAIL_SCHEME=tls si falla la conexión
             'scheme' => env('MAIL_SCHEME'),
             'url' => env('MAIL_URL'),
             'host' => env('MAIL_HOST', '127.0.0.1'),
@@ -47,6 +52,8 @@ return [
             'password' => env('MAIL_PASSWORD'),
             'timeout' => null,
             'local_domain' => env('MAIL_EHLO_DOMAIN', parse_url((string) env('APP_URL', 'http://localhost'), PHP_URL_HOST)),
+            // Opciones pasadas al transporte Symfony (p. ej. auto_tls para puerto 2525)
+            'verify_peer' => filter_var(env('MAIL_VERIFY_PEER', true), FILTER_VALIDATE_BOOL),
         ],
 
         'ses' => [
@@ -113,6 +120,16 @@ return [
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
         'name' => env('MAIL_FROM_NAME', 'Example'),
+    ],
+
+    /*
+    | Opcional: destinos fijos para comprobantes (Gmail +alias → mismo buzón).
+    | Vacío = usar email del usuario en BD (paciente, doctor, primer administrador).
+    */
+    'appointment_notification_emails' => [
+        'paciente' => env('MAIL_NOTIFY_PACIENTE'),
+        'doctor' => env('MAIL_NOTIFY_DOCTOR'),
+        'admin' => env('MAIL_NOTIFY_ADMIN'),
     ],
 
 ];

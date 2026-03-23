@@ -16,10 +16,12 @@ class DatabaseSeeder extends Seeder
         // llamar al RoleSeeder creado
         $this->call([
             RoleSeeder::class,
+            RoleDescriptionSeeder::class,
             UserSeeder::class,
             BloodTypeSeeder::class,
             SpecialitySeeder::class,
             DoctorSeeder::class,
+            DemoMailUsersSeeder::class,
         ]);
 
     }
