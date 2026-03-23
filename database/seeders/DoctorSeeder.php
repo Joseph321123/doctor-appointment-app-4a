@@ -30,7 +30,7 @@ class DoctorSeeder extends Seeder
                 ['email' => $data['email']],
                 [
                     'name'     => $data['name'],
-                    'password' => bcrypt('password'),
+                    'password' => 'password',
                     'id_number' => 'DOC-' . str_pad($i + 1, 4, '0', STR_PAD_LEFT),
                     'phone'    => '555' . str_pad($i + 1, 7, '0', STR_PAD_LEFT),
                     'address'  => 'Consultorio ' . ($i + 1) . ', Hospital Central',

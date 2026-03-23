@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
         User::factory()->create([
             'name' => 'Joseph Aguilar',
             'email' => 'joseph@tecdesoftware.com.mx',
-            'password' => bcrypt('123456'),
+            'password' => '123456',
             'id_number' => '123456789',
             'phone' => '5555555555',
             'address' => 'Calle 123, Colonia 456',
