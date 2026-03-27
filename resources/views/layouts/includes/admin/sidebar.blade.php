@@ -48,6 +48,13 @@ $links = [
     'active' => request()->routeIs('admin.appointments.*'),
 ],
 
+[
+    'name' => 'Importar pacientes',
+    'icon' => 'fa-solid fa-file-import',
+    'href' => route('admin.import-pacientes.index'),
+    'active' => request()->routeIs('admin.import-pacientes.*'),
+],
+
 ];
 @endphp
 
