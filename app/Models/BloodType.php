@@ -6,8 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class BloodType extends Model
 {
+    protected $fillable = [
+        'name',
+    ];
+
     //
-    //Relacion unoa muchos con Patient
+    // Relacion unoa muchos con Patient
     public function patients()
     {
         return $this->hasMany(Patient::class, 'blood_type_id', 'id');

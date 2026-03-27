@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Patient extends Model
 {
-
     protected $fillable = [
         'user_id',
         'blood_type_id',
+        'birth_date',
         'allergies',
         'chronic_conditions',
         'surgical_history',
@@ -20,13 +20,22 @@ class Patient extends Model
         'emergency_contact_relationship',
     ];
 
-    //Relacion uno a uno inversa
-    public function user(){
+    protected function casts(): array
+    {
+        return [
+            'birth_date' => 'date',
+        ];
+    }
+
+    // Relacion uno a uno inversa
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 
-    //Relacion uno a uno inversa
-    public function bloodType(){
+    // Relacion uno a uno inversa
+    public function bloodType()
+    {
         return $this->belongsTo(BloodType::class);
     }
 
